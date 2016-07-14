@@ -65,7 +65,7 @@ So you need to set route or path there like so.
 
     <form action="{{ FormAction::get(['parameters' => [1, 2, 3]]) }}">
 
-**Using route() method()**
+**Using route() method**
 
     <form action="{{ FormAction::route() }}">
     
@@ -78,7 +78,7 @@ So you need to set route or path there like so.
 
     <form action="{{ FormAction::route(1, '/default_path') }}">
 
-**Using path() method()**
+**Using path() method**
 
     <form action="{{ FormAction::path() }}">
     
