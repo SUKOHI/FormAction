@@ -37,7 +37,7 @@ So you need to set route or path there like so.
          * Routes
          */
         'routes' => [
-            'home.login' => '/auth/authenticate'	// When current route is `home.login`, return `/auth/authenticate`.
+            'home.login' => 'home.authenticate'	// When current route is `home.login`, return `route('home.authenticate')`.
         ],
     
         /*
@@ -51,13 +51,19 @@ So you need to set route or path there like so.
 
 # Usage
 
-(in View)  
+**Basic Usage**
 
     <form action="{{ FormAction::get() }}">
 
-or you can set default path like so.
+**with Options**
 
-    <form action="{{ FormAction::get('/default_path') }}">
+[Default Path]
+
+    <form action="{{ FormAction::get(['default' => '/default_path']) }}">
+
+[Route Parameters]
+
+    <form action="{{ FormAction::get(['parameters' => [1, 2, 3]]) }}">
 
 # License
 

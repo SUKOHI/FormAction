@@ -2,18 +2,19 @@
 
 class FormAction {
 
-	public static function get($default = '') {
+	public static function get($options = []) {
 
 		$current_route = \Route::currentRouteName();
 		$routes = config('formaction.routes');
 
 		if(is_array($routes)) {
 
-			foreach ($routes as $route => $action) {
+			foreach ($routes as $route => $next_route) {
 
 				if($current_route == $route) {
 
-					return $action;
+					$params = array_get($options, 'parameters', []);
+					return route($next_route, $params);
 
 				}
 
@@ -44,7 +45,7 @@ class FormAction {
 
 		}
 
-		return $default;
+		return array_get($options, 'default', '');
 
 	}
 

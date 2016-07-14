@@ -6,7 +6,7 @@ return [
 	 * Routes
 	 */
 	'routes' => [
-		'home.login' => '/auth/authenticate'	// When current route is `home.login`, return `/auth/authenticate`.
+		'home.login' => 'home.authenticate'	// When current route is `home.login`, return `route('home.authenticate')`.
 	],
 
 	/*
