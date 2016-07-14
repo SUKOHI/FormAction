@@ -51,7 +51,7 @@ So you need to set route or path there like so.
 
 # Usage
 
-**Basic Usage**
+**Simple Usage**
 
     <form action="{{ FormAction::get() }}">
 
@@ -64,6 +64,27 @@ So you need to set route or path there like so.
 [Route Parameters]
 
     <form action="{{ FormAction::get(['parameters' => [1, 2, 3]]) }}">
+
+**Using route() method()**
+
+    <form action="{{ FormAction::route() }}">
+    
+[with Parameters]
+    
+    <form action="{{ FormAction::route(1) }}">
+    <form action="{{ FormAction::route([1, 2, 3]) }}">
+
+[with Default Path]
+
+    <form action="{{ FormAction::route(1, '/default_path') }}">
+
+**Using path() method()**
+
+    <form action="{{ FormAction::path() }}">
+    
+[with Default Path]
+
+    <form action="{{ FormAction::path('/default_path') }}">
 
 # License
 
